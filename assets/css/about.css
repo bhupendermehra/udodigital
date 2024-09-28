@@ -1,0 +1,252 @@
+:root{
+    --royal-blue-light: hsl(225, 68%, 53%);
+
+    --gradient: linear-gradient( 90deg, var(--carolina-blue) 0%, var(--royal-blue-light) 100%);
+
+}
+/*-----------------------------------*\
+  #FEATURES
+\*-----------------------------------*/
+
+.feature .container {
+    display: grid;
+    gap: 50px;
+  }
+  
+  .feature .section-text { margin-block: 25px 30px; }
+  
+  .feature-list {
+    display: grid;
+    gap: 15px;
+  }
+  
+  .feature-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .feature-card .card-icon {
+    background-color: var(--lavender-web);
+    font-size: 1.4rem;
+    padding: 4px;
+    border-radius: var(--radius-circle);
+  }
+  
+  .feature-card .card-icon ion-icon { --ionicon-stroke-width: 40px; }
+  
+
+
+
+
+
+/*-----------------------------------*\
+  #Agency
+\*-----------------------------------*/
+
+.about-banner { margin-block-end: 30px; }
+
+.about .section-title { margin-inline: 0; }
+
+.about .underline::before {
+  left: 0;
+  transform: translateX(0);
+}
+
+.about-text {
+  font-size: var(--fs-8);
+  margin-block-end: 20px;
+}
+
+.stats-list {
+  display: grid;
+  gap: 30px;
+}
+
+.stats-card {
+  text-align: center;
+  padding: 15px;
+  box-shadow: var(--shadow);
+  border-radius: var(--radius-12);
+}
+
+.stats-title {
+  color: var(--st-patricks-blue);
+  font-size: var(--fs-2);
+  font-weight: var(--fw-700);
+}
+
+.stats-text { font-size: var(--fs-8); }
+
+
+
+
+/*-----------------------------------*\
+  #Expert
+\*-----------------------------------*/
+
+.doctor .section-title { margin-block-end: 50px; }
+
+.doctor-card .card-banner {
+  border-radius: var(--radius-4);
+  overflow: hidden;
+  margin-block-end: 25px;
+}
+
+.doctor-card {
+  padding: 30px;
+  border: 1px solid var(--light-gray);
+  border-radius: var(--radius-4);
+  text-align: center;
+  min-height: 100%;
+}
+
+.doctor-card .card-title {
+  font-size: var(--fs-4);
+  transition: var(--transition);
+}
+
+.doctor-card:is(:hover, :focus-within) .card-title { color: var(--royal-blue-light); }
+
+.doctor-card .card-subtitle {
+  color: var(--royal-blue-light);
+  margin-block: 10px 15px;
+}
+
+.doctor-card .card-social-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.doctor-card .card-social-link {
+  background-color: var(--lavender-web);
+  color: var(--royal-blue-light);
+  font-size: 16px;
+  padding: 12px;
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.doctor-card .card-social-link:is(:hover, :focus) {
+  background-color: var(--royal-blue-light);
+  color: var(--white);
+}
+
+.has-scrollbar {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  margin-inline: 15px;
+  padding-block-end: 40px;
+  margin-block-end: -20px;
+  scroll-snap-type: inline mandatory;
+}
+
+.scrollbar-item {
+  min-width: 100%;
+  scroll-snap-align: start;
+}
+
+.has-scrollbar::-webkit-scrollbar { height: 10px; }
+
+.has-scrollbar::-webkit-scrollbar-track {
+  background-color: var(--light-gray);
+  border-radius: var(--radius-4);
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--royal-blue-light);
+  border-radius: var(--radius-4);
+}
+
+.has-scrollbar::-webkit-scrollbar-button { width: calc(25% - 30px); }
+
+
+
+
+
+
+
+
+
+
+  
+  /*Media Query  */
+
+
+  @media (min-width:550px){
+
+      /**
+   * Agency
+   */
+
+  .stats-list { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (min-width:768px){
+    
+  /**
+   * FEATURE
+   */
+
+  .feature .container {
+    grid-template-columns: 0.7fr 1fr;
+    align-items: center;
+  }
+
+  .feature-banner { order: 1; }
+
+
+  }
+  @media (min-width: 992x) {
+
+
+
+  /**
+   * DOCTOR
+   */
+
+   .scrollbar-item { min-width: calc(33.33% - 20px); }
+
+
+  }
+  @media (min-width: 1200px) {
+
+    /**
+     * REUSED STYLE
+     */
+  
+    .container { max-width: 1320px; }
+  
+    
+  
+    /**
+     * FEATURE
+     */
+  
+    .feature-list { grid-template-columns: 1fr 1fr; }
+  /* Agency */
+    
+  .about .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  /**
+   * DOCTOR
+   */
+
+  .doctor { padding-block-end: 180px; }
+
+  .scrollbar-item { min-width: calc(25% - 22.5px); }
+
+  .has-scrollbar {
+    padding-block-end: 0;
+    margin-block-end: 0;
+  }
+
+
+  }
